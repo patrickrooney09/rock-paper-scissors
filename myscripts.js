@@ -12,39 +12,47 @@ function computerPlay(){
     }
 }
 
-let playerPrompt = "rock"
+
 
 // write a function that plays a single round of rock paper scissors- with two parameters, playerSelection and computerSelection- return a string that declares a winner. make it case insensitive
 
 function playRockPaperScissors(playerSelection,computerSelection){
     computerSelection = computerPlay();
+    let playerPrompt = window.prompt("Rock, Paper, or Scissors?");
     playerSelection = playerPrompt.toLowerCase();
-    console.log(`You chose ${playerSelection}`);
     if (playerSelection === "paper" && computerSelection === "Rock"){
-        console.log("Computer chose Rock. Player Wins!");
+        return ("You chose paper. Computer chose Rock. Player Wins!");
     }else if (playerSelection === "paper" && computerSelection ==="Scissors"){
-        console.log("Computer chose scissors. Compter Wins.")
+        return ("You chose paper. Computer chose scissors. Compter Wins.")
     }else if (playerSelection === "paper" && computerSelection === "Paper"){
-        console.log("Computer Chose Paper. Tie");
+        return ("You chose paper. Computer Chose Paper. Tie");
     }else if (playerSelection === "rock" && computerSelection ==="Rock"){
-        console.log("Computer chose Rock. Tie");
+        return ("You chose rock. Computer chose Rock. Tie");
     }else if (playerSelection === "rock" && computerSelection ==="Scissors"){
-        console.log("Computer chose Scissors. Player Wins!");
+        return ("You chose rock. Computer chose Scissors. Player Wins!");
     }else if (playerSelection === "rock" && computerSelection === "Paper"){
-        console.log("Computer chose Paper. Computer Wins.");
+        return ("You chose rock. Computer chose Paper. Computer Wins.");
     }else if (playerSelection === "scissors" && computerSelection ==="Rock"){
-        console.log("Computer chose Rock. Computer Wins.");
+        return ("You chose scissors. Computer chose Rock. Computer Wins.");
     }else if (playerSelection === "scissors" && computerSelection === "Scissors"){
-        console.log("Computer chose Scissors. Tie.");
+        return ("You chose scissors. Computer chose Scissors. Tie.");
     }else if (playerSelection ==="scissors" && computerSelection === "Paper"){
-        console.log("Computer chose Paper. Player Wins!")
+        return ("You chose scissors. Computer chose Paper. Player Wins!")
     }else{
-        console.log(`${playerPrompt} isn't a rock, paper, or scissors!`);
+        return (`${playerPrompt} isn't a rock, paper, or scissors!`);
     }
 }
-playRockPaperScissors();
+
 
 //write a function called game() call the play round function inside of this one to play a five round game that keeps score and reports a winner or loser at the end. use loops
+
+function game(){
+    for (let i = 0; i < 5; i++){
+        console.log(playRockPaperScissors());
+    }
+}
+game();
+;
 //use condole.log to display the results of each round and the winner at the end
 //use prompt to get the input from the user
 
