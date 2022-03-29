@@ -1,9 +1,11 @@
 //rock paper scissors project//
-//begin writing a function called computerPlay- that will randomly generate rock, paper of scissors
 
+// write variables that will store scoring information
 let playerScore=0;
 let computerScore=0;
 let drawScore= 0;
+
+//begin writing a function called computerPlay- that will randomly generate rock, paper of scissors
 function computerPlay(){
     let x= Math.floor(Math.random()*3)+1
     if (x===1){
@@ -60,44 +62,18 @@ function playRockPaperScissors(playerSelection,computerSelection){
 function game(){
     for (let i = 0; i < 5; i++){
         console.log(playRockPaperScissors());
+    }if (playerScore > computerScore){
+        console.log(`Your score: ${playerScore}. Computer score: ${computerScore}. You win!`)
+    }else if (playerScore < computerScore){
+        console.log(`Your score: ${playerScore}. Computer score: ${computerScore}. Computer Wins.`)
+    }else{
+        console.log(`All tied up.`)
     }
 }
 
 
-console.log(game());
-console.log(playerScore);
-console.log(computerScore);
-console.log(drawScore);
+game();
 
-//use condole.log to display the results of each round and the winner at the end
-//use prompt to get the input from the user
 
-/*let playerScore = 0;
-let computerScore = 0;
-let draws = 0;
 
-let tally = (playerScore,computerScore,draws);
 
-function gameScore(){
-    let result = playRockPaperScissors();
-
-    if (result === "You chose paper. Computer chose Rock. Player Wins!"){
-        playerScore++;
-    }else if (result=== "You chose paper. Computer chose scissors. Compter Wins."){
-        computerScore++;
-    }else if (result === "You chose paper. Computer Chose Paper. Tie"){
-        draws++;
-    }else if (result === "You chose rock. Computer chose Rock. Tie"){
-        draws++;
-    }else if (result === "You chose rock. Computer chose Scissors. Player Wins!"){
-        playerScore++;
-    }else if (result === "You chose rock. Computer chose Paper. Computer Wins."){
-        computerScore++;
-    }else if (result === "You chose scissors. Computer chose Rock. Computer Wins." ){
-        computerScore++;
-    }else if (result === "You chose scissors. Computer chose Scissors. Tie."){
-        draws++;
-    }else if (result === "You chose scissors. Computer chose Paper. Player Wins!"){
-        playerScore++;
-    }
-}*/
